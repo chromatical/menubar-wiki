@@ -16,13 +16,13 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    inkscape:export-filename="/home/jamie/menubar-master/example/icon@2.png"
-   inkscape:export-xdpi="54.999947"
-   inkscape:export-ydpi="54.999947"
+   inkscape:export-xdpi="61.875"
+   inkscape:export-ydpi="61.875"
    sodipodi:docname="icon.svg">
   <defs
      id="defs4">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Drop Shadow"
        id="filter4160">
       <feFlood
@@ -62,8 +62,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="6.6504649"
-     inkscape:cx="33.685351"
-     inkscape:cy="26.484972"
+     inkscape:cx="37.68539"
+     inkscape:cy="30.485006"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -93,24 +93,25 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-130.77063,-434.73444)">
+     transform="translate(-126.7706,-438.73447)">
     <circle
        style="fill:#0074d9;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4160)"
        id="path3336"
        cx="162.77063"
        cy="466.73444"
-       r="30.000029" />
+       r="30.000029"
+       transform="matrix(0.88888804,0,0,0.88888804,14.085729,55.859812)" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:43.14994431px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="142.55489"
-       y="480.77979"
+       style="font-style:normal;font-weight:normal;font-size:38.35546875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="140.80106"
+       y="483.21921"
        id="text4138"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4140"
-         x="142.55489"
-         y="480.77979"
+         x="140.80106"
+         y="483.21921"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:times;-inkscape-font-specification:times;fill:#ffffff;fill-opacity:1">W</tspan></text>
   </g>
 </svg>
