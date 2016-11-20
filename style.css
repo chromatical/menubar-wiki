@@ -1,0 +1,86 @@
+html, body{
+  margin:0;
+  padding:0;
+  overflow: hidden;
+}
+.menu{
+  width:100%;
+  background:#0074D9;
+  height:46px;
+  -webkit-user-select:none;
+}
+.menu-right{
+  float: right;
+  margin-right: 10px;
+}
+.menu button{
+  height:46px;
+  width:30px;
+  color:white;
+  background: none;
+  border:none;
+  transition: background .2s;
+}
+.menu button:active{
+  background: #001f3f;
+}
+#grab{
+  -webkit-app-region: drag;
+}
+#browser{
+  opacity: 0;
+  pointer-events:none;
+  transition: opacity .2s;
+}
+#browser.active{
+  opacity: 1;
+  pointer-events:all;
+}
+#pin.active{
+  background: #001f3f;
+}
+.search{
+  display: inline-block;
+}
+.searchbox{
+  width:150px;
+  border: none;
+  padding: 5px;
+  -webkit-app-region: no-drag;
+  border-radius: 8px;
+}
+.searchbox:focus,.menu button:focus{
+  outline:none;
+}
+.main webview{
+  width:300px;
+  height:0px;
+  transition: opacity .2s;
+}
+.loader{
+  display: none;
+  position: fixed;
+  top:0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+}
+.spinner{
+  border: 12px solid #f3f3f3;
+  border-top: 12px solid #1397E8;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin .5s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
+@keyframes spin{
+  0%{
+    transform:rotate(0deg);
+    }
+  100%{
+    transform:rotate(360deg);
+    }
+  }

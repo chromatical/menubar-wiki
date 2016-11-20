@@ -1,0 +1,107 @@
+<html>
+<head>
+  <title>Menubar Wiki</title>
+  <link rel=stylesheet href="style.css">
+  <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+</head>
+<body>
+  <div class="menu">
+    <div class="search">
+      <form id="searchform">
+        <button id="grab"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+        <input type="text" class="searchbox" required />
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <div class="menu-right">
+      <button id="browser"><i class="fa fa-globe" aria-hidden="true"></i></button>
+      <button id="pin"><i class="fa fa-thumb-tack" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="main">
+    <webview src="#"></webview>
+  </div>
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script>
+    const remote = require('electron').remote
+    const {shell} = require('electron')
+    var win = remote.getCurrentWindow()
+    var blankload = true
+    var firstload = true
+
+    $('#searchform').on('submit',function(e){
+      e.preventDefault()
+      var resize
+      if (firstload === true){
+        var h = 46
+        var x = win.getPosition()[0]
+        var resize = setInterval(function(){
+          if (h < 502){
+            var y = win.getPosition()[1]
+            if (y > 0){
+              win.setPosition(x,y-10)
+            }
+            win.setSize(300,h)
+            h = h + 10
+          }
+          else{
+            clearInterval(resize)
+          }
+        },1)
+        firstload = false
+      }
+      $('webview')[0].loadURL('https://en.m.wikipedia.org/w/index.php?title=Special:Search&search='+$('.searchbox').val())
+    })
+
+    $('webview').on('did-start-loading', function(){
+      $('webview').css('opacity',0)
+      if (blankload === false){
+        $('.loader').fadeIn(300);
+      }
+    })
+
+    $('webview').on('did-stop-loading', function(){
+      $('webview')[0].insertCSS(".banner-container,.header-container,footer,#page-actions,.edit-page{display:none !important;}.heading-holder{padding-bottom:0 !important;}")
+      if (blankload === false){
+        $('.loader').fadeOut(300);
+        $('webview').css({'opacity':1,'height':454})
+        $('#browser').addClass('active')
+      }
+      else{
+        blankload = false
+      }
+    })
+
+    $('#pin').on('click',function(){
+      $(this).toggleClass('active')
+    })
+
+    $('#browser').on('click',function(){
+      win.hide()
+      shell.openExternal($('webview')[0].getURL())
+    })
+
+    win.on('show',function(){
+      $('.searchbox').select().focus()
+    })
+
+    win.on('blur',function(){
+      if (! $('#pin').hasClass('active')){
+        win.hide()
+      }
+    })
+
+    $(document).on('dragover',function(e){
+      e.preventDefault()
+    })
+
+    $(document).on('drop',function(e){
+      e.preventDefault()
+    })
+  </script>
+</body>
+</html>
