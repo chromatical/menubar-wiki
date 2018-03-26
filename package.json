@@ -6,7 +6,7 @@
     "menubar": "*"
   },
   "devDependencies": {
-    "electron": "1.4.7"
+    "electron": "*"
   },
   "main": "main.js",
   "scripts": {
